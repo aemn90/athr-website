@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدواتي - موقع الأدوات الشامل</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --primary-color: #007bff;
+            --border-color: #e0e0e0;
+        }
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --primary-color: #3b82f6;
+            --border-color: #333333;
+        }
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .tool-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div class="container">
+        <header>
+            <h1>موقع أدواتي الشامل</h1>
+            <button onclick="toggleTheme()">الوضع الليلي</button>
+        </header>
+        <main>
+            <p>مرحباً بك في موقعك الشامل الذي يضم أدوات متعددة.</p>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>أداة 1</h3>
+                    <p>وصف مختصر للأداة</p>
+                </div>
+                <div class="tool-card">
+                    <h3>أداة 2</h3>
+                    <p>وصف مختصر للأداة</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+            }
+        }
+    </script>
+</body>
+</html>
